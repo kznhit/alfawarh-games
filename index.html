@@ -8,31 +8,31 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to the Game</h1>
-    <p>Choose the category you want to test:</p>
+    <h1>مرحبا بك</h1>
+    <p>اختر القسم الذي ترغب في اختباره:</p>
   </header>
   <div class="container">
     <ul style="list-style: none; padding: 0;">
-      <li><a href="math.html">Mathematics Questions</a></li>
-      <li><a href="religion.html">Religious Questions</a></li>
-      <li><a href="soccer.html">Saudi Pro League Questions</a></li>
+      <li><a href="math.html">أسئلة رياضيات</a></li>
+      <li><a href="religion.html">أسئلة دينية</a></li>
+      <li><a href="soccer.html">أسئلة الدوري السعودي</a></li>
     </ul>
-    <h2>Your Scores:</h2>
+    <h2>درجاتك:</h2>
     <div id="scores">
-      <p>Mathematics Score: <span id="mathScore">Not yet completed</span></p>
-      <p>Religious Score: <span id="religionScore">Not yet completed</span></p>
-      <p>Saudi Pro League Score: <span id="soccerScore">Not yet completed</span></p>
+      <p>الدرجة في الرياضيات: <span id="mathScore">لم يتم الإجابة بعد</span></p>
+      <p>الدرجة في الأسئلة الدينية: <span id="religionScore">لم يتم الإجابة بعد</span></p>
+      <p>الدرجة في الدوري السعودي: <span id="soccerScore">لم يتم الإجابة بعد</span></p>
     </div>
   </div>
   <footer>
-    <p>Developed by Fares</p>
+    <p>تم تطوير اللعبة بواسطة فارس</p>
   </footer>
 
   <script>
     // قراءة الدرجات من localStorage
-    document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "Not yet completed";
-    document.getElementById("religionScore").textContent = localStorage.getItem('religionScore') || "Not yet completed";
-    document.getElementById("soccerScore").textContent = localStorage.getItem('soccerScore') || "Not yet completed";
+    document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "لم يتم الإجابة بعد";
+    document.getElementById("religionScore").textContent = localStorage.getItem('religionScore') || "لم يتم الإجابة بعد";
+    document.getElementById("soccerScore").textContent = localStorage.getItem('soccerScore') || "لم يتم الإجابة بعد";
   </script>
 </body>
 </html>
