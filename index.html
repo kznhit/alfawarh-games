@@ -17,6 +17,20 @@
       <li><a href="religion.html">أسئلة دينية</a></li>
       <li><a href="soccer.html">أسئلة الدوري السعودي</a></li>
     </ul>
+
+    <!-- إضافة الأسئلة والأجوبة هنا -->
+    <div class="question-section">
+      <div class="question">ما هي عاصمة المملكة العربية السعودية؟</div>
+      <ul class="options">
+        <li><button class="option" onclick="checkAnswer(this, true)">الرياض</button></li>
+        <li><button class="option" onclick="checkAnswer(this, false)">جدة</button></li>
+        <li><button class="option" onclick="checkAnswer(this, false)">الدمام</button></li>
+      </ul>
+      <div id="answers">
+        <div class="answer"></div>
+      </div>
+    </div>
+
     <h2>درجاتك:</h2>
     <div id="scores">
       <p>الدرجة في الرياضيات: <span id="mathScore">لم يتم الإجابة بعد</span></p>
@@ -32,6 +46,22 @@
   </footer>
 
   <script>
+    // وظيفة للتحقق من الإجابة وتغيير اللون بناءً عليها
+    function checkAnswer(button, isCorrect) {
+      const answerDiv = document.querySelector("#answers .answer");
+      if (isCorrect) {
+        button.style.backgroundColor = "green";
+        answerDiv.textContent = "إجابة صحيحة!";
+        answerDiv.classList.add("correct-answer");
+        answerDiv.classList.remove("incorrect-answer");
+      } else {
+        button.style.backgroundColor = "red";
+        answerDiv.textContent = "إجابة خاطئة!";
+        answerDiv.classList.add("incorrect-answer");
+        answerDiv.classList.remove("correct-answer");
+      }
+    }
+
     // قراءة الدرجات من localStorage عند تحميل الصفحة
     function loadScores() {
       document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "لم يتم الإجابة بعد";
