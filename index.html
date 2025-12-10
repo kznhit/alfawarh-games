@@ -3,23 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>مجمّع الألعاب</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Game</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header>
-    <h1>مجمّع الألعاب 🎮</h1>
+    <h1>Welcome to the Game</h1>
+    <p>Choose the category you want to test:</p>
   </header>
   <div class="container">
-    <p>اختر اللعبة التي تريدها:</p>
     <ul style="list-style: none; padding: 0;">
-      <li><a href="tennis.html">لعبة تنس</a></li>
-      <li><a href="football.html">لعبة كرة قدم</a></li>
-      <li><a href="basketball.html">لعبة كرة سلة</a></li>
+      <li><a href="math.html">Mathematics Questions</a></li>
+      <li><a href="religion.html">Religious Questions</a></li>
+      <li><a href="soccer.html">Saudi Pro League Questions</a></li>
     </ul>
+    <h2>Your Scores:</h2>
+    <div id="scores">
+      <p>Mathematics Score: <span id="mathScore">Not yet completed</span></p>
+      <p>Religious Score: <span id="religionScore">Not yet completed</span></p>
+      <p>Saudi Pro League Score: <span id="soccerScore">Not yet completed</span></p>
+    </div>
   </div>
   <footer>
-    <p>Programmer: Fares</p>
+    <p>Developed by Fares</p>
   </footer>
+
+  <script>
+    // قراءة الدرجات من localStorage
+    document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "Not yet completed";
+    document.getElementById("religionScore").textContent = localStorage.getItem('religionScore') || "Not yet completed";
+    document.getElementById("soccerScore").textContent = localStorage.getItem('soccerScore') || "Not yet completed";
+  </script>
 </body>
 </html>
