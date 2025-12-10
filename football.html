@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لعبة كرة قدم</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    #field { width: 600px; height: 400px; background-color: #0a5; margin: 20px auto; position: relative; overflow: hidden; }
+    .ball { width: 20px; height: 20px; background-color: #fff; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .goal { position: absolute; width: 120px; height: 30px; background-color: #ccc; top: 0; left: 50%; transform: translateX(-50%); border-bottom: 2px solid #fff; }
+    #score { color: #fff; font-size: 20px; margin: 10px 0; }
+    button { padding: 10px 20px; font-size: 1em; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header><h1>لعبة كرة قدم — ركلة نحو المرمى</h1></header>
+  <div class="container">
+    <div id="score">النتيجة: 0</div>
+    <div id="field">
+      <div class="goal"></div>
+      <div class="ball" id="ball"></div>
+    </div>
+    <p>اضغط على <strong>Space</strong> للركلة (لرمي الكرة نحو المرمى).</p>
+    <p><button onclick="resetGame()">إعادة البداية</button></p>
+    <p><a href="index.html">العودة للصفحة الرئيسية</a></p>
+  </div>
+  <footer><p>ثالث ثانوي أ</p></footer>
+
+<script>
+  const ball = document.getElementById('ball');
+  const field = document.getElementById('field');
+  const scoreEl = document.getElementById('score');
+  let score = 0;
+  let animating = false;
+
+  function kick() {
+    if (animating) return;
+    animating = true;
+    let posY = ball.offsetTop;
+    const targetY = 0; // المرمى في الأعلى
+    let id = setInterval(frame, 10);
+    function frame() {
+      if (posY <= targetY + 30) { // 30 px = ارتفاع المرمى
+        clearInterval(id);
+        // فرصة تسجيل هدف عشوائية
+        if (Math.random() < 0.7) { // احتمال تسجيل 70%
+          score++;
+          scoreEl.textContent = `النتيجة: ${score}`;
+          alert("هدف! 🎯");
+        } else {
+          alert("ضربة جانبية! حاول مرة أخرى.");
+        }
+        ball.style.top = '50%';
+        ball.style.left = '50%';
+        ball.style.transform = 'translate(-50%, -50%)';
+        animating = false;
+      } else {
+        posY -= 8;
+        ball.style.top = posY + 'px';
+      }
+    }
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Space') {
+      kick();
+    }
+  });
+
+  function resetGame() {
+    score = 0;
+    scoreEl.textContent = `النتيجة: ${score}`;
+    ball.style.top = '50%';
+    ball.style.left = '50%';
+    ball.style.transform = 'translate(-50%, -50%)';
+    animating = false;
+  }
+</script>
+</body>
+</html>
