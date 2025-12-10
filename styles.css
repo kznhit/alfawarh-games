@@ -1,41 +1,51 @@
 /* خلفية داكنة مع ألوان مريحة للعين */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #232323; /* خلفية داكنة، غير مؤذية للعين */
-  color: #f1f1f1; /* نص باللون الفاتح لسهولة القراءة */
+  font-family: 'Arial', sans-serif;
+  background-color: #1c1c1c; /* خلفية داكنة */
+  color: #e0e0e0; /* نص فاتح */
   text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* تأكيد أن الصفحة تشغل المساحة الكاملة */
+  display: flex;
+  flex-direction: column; /* ترتيب المحتوى عموديًا */
+  justify-content: space-between; /* ضمان أن العناصر تتوزع بشكل صحيح */
+}
+
+/* تنسيق العناوين */
+header {
   margin: 0;
   padding: 0;
 }
 
-/* تنسيق العناوين */
 header h1 {
   color: #ff9800; /* لون برتقالي دافئ */
-  font-size: 2em;
+  font-size: 2.5em;
   margin-top: 20px;
 }
 
 header p {
   color: #fff;
   font-size: 1.2em;
-  margin-bottom: 20px;
+  margin: 10px 0; /* تقليل المسافات */
 }
 
 /* تنسيق الأسئلة */
 .question {
   font-size: 1.5em;
-  margin: 20px 0;
+  margin: 10px 0; /* تقليل المسافات حول السؤال */
   padding: 10px;
-  text-align: center;  /* محاذاة النص في منتصف الصفحة */
-  width: 100%; /* تأكيد أن عرض السؤال سيأخذ المساحة كاملة */
-  word-wrap: break-word;  /* إذا كان النص طويلًا جدًا، ينكسر ليظهر في السطر التالي */
+  text-align: center; /* محاذاة النص في منتصف الصفحة */
+  width: 100%;
+  word-wrap: break-word; /* إذا كان النص طويلًا جدًا، ينكسر ليظهر في السطر التالي */
   direction: rtl; /* جعل النص يظهر من اليمين لليسار */
 }
 
+/* إذا كان هناك نص إنجليزي في السؤال */
 .question span {
-  direction: ltr; /* نصوص إنجليزية ستظهر من اليسار لليمين */
-  display: inline-block; /* التأكد من أن النص الإنجليزي يظهر بشكل مناسب */
-  font-weight: bold;  /* جعل النص الإنجليزي غامقًا لتمييزه */
+  direction: ltr;
+  display: inline-block;
+  font-weight: bold; /* جعل النص الإنجليزي غامقًا */
 }
 
 /* تنسيق الأزرار */
@@ -44,7 +54,7 @@ header p {
   justify-content: center; /* ترتيب الأزرار في وسط الصفحة */
   gap: 20px; /* المسافة بين الأزرار */
   flex-wrap: wrap; /* إذا كان هناك أزرار كثيرة، ستنتقل إلى السطر التالي */
-  margin-top: 30px;
+  margin-top: 10px; /* تقليل المسافات بين الأزرار */
 }
 
 .option {
@@ -55,7 +65,7 @@ header p {
   border-radius: 12px;
   cursor: pointer;
   font-size: 18px;
-  width: 120px; /* عرض ثابت للأزرار */
+  width: 120px;
   text-align: center;
   transition: background-color 0.3s ease; /* تأثير التغيير عند التمرير */
 }
@@ -66,17 +76,17 @@ header p {
 
 /* تنسيق النتيجة */
 #result {
-  margin-top: 20px;
+  margin-top: 10px; /* تقليل المسافة بين النتيجة والأسئلة */
   font-size: 1.5em;
-  color: #f1f1f1; /* لون النص الفاتح */
+  color: #f1f1f1;
   font-weight: bold;
 }
 
 /* زر العودة إلى الصفحة الرئيسية */
 #backToHome button {
-  margin-top: 20px;
+  margin-top: 10px; /* تقليل المسافة */
   padding: 10px 20px;
-  background-color: #ff9800; /* اللون البرتقالي الدافئ */
+  background-color: #ff9800;
   color: white;
   border: none;
   border-radius: 10px;
@@ -85,11 +95,12 @@ header p {
 }
 
 #backToHome button:hover {
-  background-color: #fb8c00; /* اللون البرتقالي الداكن عند التمرير */
+  background-color: #fb8c00;
 }
 
 /* تنسيق الفوتر */
 footer {
-  margin-top: 50px;
+  margin-top: 20px; /* تقليل المسافة بين الفوتر والمحتوى */
   color: #bbb;
+  padding: 10px;
 }
