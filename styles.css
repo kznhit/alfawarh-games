@@ -36,7 +36,7 @@ ul {
   display: flex;
   flex-direction: column; /* ترتيب الأزرار بشكل عمودي */
   align-items: center;
-  gap: 15px; /* تقليل المسافة بين الأزرار */
+  gap: 10px; /* تقليل المسافة بين الأزرار */
 }
 
 ul li {
@@ -47,8 +47,8 @@ ul li a {
   display: block;
   background-color: #4caf50; /* زر أخضر هادئ */
   color: white;
-  padding: 15px; /* تقليل الحجم */
-  font-size: 1.8em; /* تقليل حجم النص داخل الأزرار */
+  padding: 10px; /* تقليل الحجم */
+  font-size: 1.8em; /* تصغير حجم النص داخل الأزرار */
   border-radius: 12px;
   width: 60%; /* جعل الأزرار تأخذ نسبة صغيرة من العرض */
   margin: 5px 0; /* المسافة بين الأزرار */
