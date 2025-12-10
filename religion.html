@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Religious Questions</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Religious Questions</h1>
+  </header>
+  <div class="container" id="questionContainer">
+    <!-- سيتم عرض الأسئلة هنا -->
+  </div>
+  <div id="result"></div>
+  <div id="backToHome">
+    <button onclick="window.location.href='index.html'">Back to Homepage</button>
+  </div>
+  <footer>
+    <p>Developed by Fares</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "1. من هو النبي الذي ابتلعه الحوت؟",
+        options: ["يونس", "موسى", "إبراهيم", "عيسى"],
+        correctAnswer: "يونس"
+      },
+      {
+        question: "2. ما هي الصلاة التي تأتي بعد الفجر؟",
+        options: ["الظهر", "العصر", "السنن", "الشروق"],
+        correctAnswer: "الشروق"
+      },
+      {
+        question: "3. كم عدد سور القرآن الكريم؟",
+        options: ["114", "120", "112", "125"],
+        correctAnswer: "114"
+      },
+      {
+        question: "4. من هو أول خليفة للمسلمين؟",
+        options: ["أبو بكر", "عمر بن الخطاب", "عثمان بن عفان", "علي بن أبي طالب"],
+        correctAnswer: "أبو بكر"
+      },
+      {
+        question: "5. ما هي ليلة القدر؟",
+        options: ["ليلة السابع والعشرون", "ليلة الخامس والعشرون", "ليلة التاسع والعشرون", "ليلة الثلاثين"],
+        correctAnswer: "ليلة السابع والعشرون"
+      },
+      {
+        question: "6. ما هو عدد الصلوات المفروضة في اليوم والليلة؟",
+        options: ["3", "4", "5", "6"],
+        correctAnswer: "5"
+      },
+      {
+        question: "7. من هو النبي الذي أُرسل إلى بني إسرائيل؟",
+        options: ["موسى", "محمد", "إبراهيم", "عيسى"],
+        correctAnswer: "موسى"
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function displayQuestion() {
+      if (currentQuestionIndex < questions.length) {
+        const question = questions[currentQuestionIndex];
+        document.getElementById("questionContainer").innerHTML = `
+          <p>${question.question}</p>
+          <div class="options">
+            ${question.options.map(option => `
+              <button class="option" onclick="checkAnswer('${option}')">${option}</button>
+            `).join('')}
+          </div>
+        `;
+      } else {
+        showResult();
+      }
+    }
+
+    function checkAnswer(selectedAnswer) {
+      const question = questions[currentQuestionIndex];
+      if (selectedAnswer === question.correctAnswer) {
+        score++;
+      }
+      currentQuestionIndex++;
+      displayQuestion();
+    }
+
+    function showResult() {
+      document.getElementById('result').textContent = `انتهت الأسئلة! درجتك: ${score} من ${questions.length}`;
+    }
+
+    displayQuestion();
+  </script>
+</body>
+</html>
