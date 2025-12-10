@@ -10,17 +10,21 @@
   <header>
     <h1>أسئلة رياضيات</h1>
   </header>
+
   <div class="container" id="questionContainer">
     <!-- سيتم عرض الأسئلة هنا -->
   </div>
+  
   <div id="result"></div>
   <div id="answersList" style="display:none;">
     <h3>إجاباتك:</h3>
     <div id="answers"></div>
   </div>
+  
   <div id="backToHome">
     <button onclick="window.location.href='index.html'">العودة إلى الصفحة الرئيسية</button>
   </div>
+
   <footer>
     <p>تم تطوير اللعبة بواسطة فارس</p>
   </footer>
@@ -71,8 +75,9 @@
 
       let answersHTML = "";
       questions.forEach((question, index) => {
+        const answerClass = question.userAnswer === question.correctAnswer ? 'correct' : 'incorrect';
         answersHTML += `
-          <div class="answer ${question.userAnswer === question.correctAnswer ? 'correct' : 'incorrect'}">
+          <div class="answer ${answerClass}">
             <p><strong>السؤال ${index + 1}:</strong> ${question.question}</p>
             <p><strong>إجابتك:</strong> ${question.userAnswer}</p>
             <p><strong>الإجابة الصحيحة:</strong> ${question.correctAnswer}</p>
@@ -82,7 +87,6 @@
         `;
       });
       document.getElementById('answers').innerHTML = answersHTML;
-      // تخزين الدرجة في localStorage
       localStorage.setItem('mathScore', score);
     }
 
