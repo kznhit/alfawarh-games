@@ -2,7 +2,7 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: #ffffff; /* خلفية بيضاء */
-  color: #333333; /* نص غامق ليتباين مع الخلفية البيضاء */
+  color: #000000; /* نص أسود */
   text-align: center;
   margin: 0;
   padding: 0;
@@ -16,16 +16,16 @@ body {
 
 /* تنسيق العنوان */
 header h1 {
-  color: #ff9800; /* لون برتقالي دافئ */
+  color: #000000; /* نص أسود */
   font-size: 2.5em; /* تصغير حجم العنوان */
   margin-bottom: 20px;
 }
 
 /* تنسيق السؤال */
 .question {
-  font-size: 2.5em; /* تصغير حجم السؤال */
+  font-size: 3em; /* تكبير حجم السؤال */
   font-weight: bold;
-  color: #333; /* نص غامق */
+  color: #000; /* نص أسود */
   margin-bottom: 30px;
 }
 
@@ -36,33 +36,46 @@ ul {
   display: flex;
   flex-direction: column; /* ترتيب الأزرار بشكل عمودي */
   align-items: center;
-  gap: 10px; /* المسافة بين الأزرار */
+  gap: 15px; /* المسافة بين الأزرار */
 }
 
 ul li {
-  width: 100%; /* تأكد أن الأزرار تأخذ عرض كامل */
+  width: 80%; /* تأكد أن الأزرار تأخذ عرض كامل لكن بنسبة صغيرة */
 }
 
 ul li a {
   display: block;
-  background: linear-gradient(135deg, #4caf50, #8bc34a); /* تدرج لوني جميل */
-  color: white;
-  padding: 10px; /* تقليل الحجم */
-  font-size: 1.8em; /* تصغير حجم النص داخل الأزرار */
-  border-radius: 15px; /* جعل الأزرار أكثر تدويرًا */
-  width: 60%; /* جعل الأزرار تأخذ نسبة صغيرة من العرض */
+  padding: 15px; /* تقليل الحجم */
+  font-size: 1.5em; /* تصغير حجم النص داخل الأزرار */
+  border-radius: 12px; /* جعل الأزرار أكثر تدويرًا */
+  width: 100%; /* جعل الأزرار تأخذ عرض كامل */
   margin: 10px 0; /* المسافة بين الأزرار */
   text-align: center;
   text-transform: uppercase; /* تكبير الحروف وجعلها علوية */
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* إضافة ظل حول الأزرار */
+  background-color: #000000; /* زر أسود */
+  color: white; /* نص أبيض داخل الأزرار */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف حول الأزرار */
   transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
 }
 
+/* تغييرات حسب الأقسام */
+ul.math li a {
+  background-color: #1e88e5; /* الأزرق لأسئلة الرياضيات */
+}
+
+ul.religion li a {
+  background-color: #ffeb3b; /* الأصفر لأسئلة دينية */
+}
+
+ul.soccer li a {
+  background-color: #e91e63; /* الوردي لأسئلة الدوري السعودي */
+}
+
+/* تأثير التمرير */
 ul li a:hover {
-  background: linear-gradient(135deg, #388e3c, #43a047); /* تغيير التدرج اللوني عند التمرير */
   transform: translateY(-5px); /* رفع الزر قليلاً عند التمرير */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التمرير */
 }
 
 ul li a:active {
@@ -89,22 +102,22 @@ ul li a:active {
 
 #backToHome p {
   font-size: 2.5em; /* تكبير النص */
-  color: #ff9800;
+  color: #000000; /* نص أسود */
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase; /* تكبير الحروف وجعلها علوية */
-  text-shadow: 1px 1px 5px rgba(255, 152, 0, 0.7); /* إضافة ظل للنص */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* إضافة ظل للنص */
 }
 
 #backToHome p:hover {
   text-decoration: underline;
-  color: #fb8c00; /* تغيير اللون عند التمرير */
+  color: #333333; /* تغيير اللون عند التمرير */
 }
 
 /* تنسيق الفوتر */
 footer {
   margin-top: 30px;
-  color: #bbb;
+  color: #000000; /* نص أسود */
   padding: 10px;
   font-size: 1.2em; /* تصغير حجم الخط في الفوتر */
 }
