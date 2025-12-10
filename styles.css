@@ -17,13 +17,15 @@ body {
 /* تنسيق العنوان */
 header h1 {
   color: #ff9800; /* لون برتقالي دافئ */
-  font-size: 3.5em; /* تكبير حجم العنوان */
+  font-size: 4em; /* تكبير حجم العنوان */
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(255, 152, 0, 0.5); /* إضافة ظل للنص */
   margin-bottom: 20px;
 }
 
 /* تنسيق السؤال */
 .question {
-  font-size: 3em; /* تكبير حجم السؤال */
+  font-size: 3.5em; /* تكبير حجم السؤال */
   font-weight: bold;
   color: #fff; /* لون النص أبيض */
   margin-bottom: 30px;
@@ -34,30 +36,40 @@ ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* إضافة التفاف للأزرار */
+  flex-direction: column; /* ترتيب الأزرار بشكل عمودي */
+  align-items: center;
+  gap: 25px; /* المسافة بين الأزرار */
 }
 
 ul li {
-  margin: 10px; /* المسافة بين الأزرار */
+  width: 100%; /* تأكد أن الأزرار تأخذ عرض كامل */
 }
 
 ul li a {
   display: block;
-  background-color: #4caf50; /* زر أخضر هادئ */
+  background: linear-gradient(135deg, #4caf50, #8bc34a); /* تدرج لوني جميل */
   color: white;
-  padding: 25px;
-  font-size: 2.5em; /* تكبير النص داخل الأزرار */
-  border-radius: 12px;
-  width: 150px; /* زيادة عرض الأزرار */
+  padding: 35px; /* تكبير الحواف */
+  font-size: 3em; /* تكبير النص داخل الأزرار */
+  border-radius: 15px; /* جعل الأزرار أكثر تدويرًا */
+  width: 70%; /* جعل الأزرار تأخذ نسبة كبيرة من العرض */
+  margin: 10px 0; /* المسافة بين الأزرار */
   text-align: center;
-  margin: 10px; /* محاذاة الأزرار */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير عند التمرير */
+  text-transform: uppercase; /* تكبير الحروف وجعلها علوية */
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* إضافة ظل حول الأزرار */
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
 }
 
 ul li a:hover {
-  background-color: #388e3c; /* تغيير اللون إلى الأخضر الداكن عند التمرير */
-  transform: scale(1.05); /* تكبير الحجم عند التمرير */
+  background: linear-gradient(135deg, #388e3c, #43a047); /* تغيير التدرج اللوني عند التمرير */
+  transform: translateY(-5px); /* رفع الزر قليلاً عند التمرير */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
+}
+
+ul li a:active {
+  transform: scale(0.98); /* تقليص الزر عند الضغط */
+  box-shadow: none; /* إزالة الظل عند الضغط */
 }
 
 /* تنسيق الزر الخاص بالعودة إلى الصفحة الرئيسية */
@@ -66,14 +78,17 @@ ul li a:hover {
 }
 
 #backToHome p {
-  font-size: 2em; /* تكبير النص */
+  font-size: 2.5em; /* تكبير النص */
   color: #ff9800;
   font-weight: bold;
   cursor: pointer;
+  text-transform: uppercase; /* تكبير الحروف وجعلها علوية */
+  text-shadow: 1px 1px 5px rgba(255, 152, 0, 0.7); /* إضافة ظل للنص */
 }
 
 #backToHome p:hover {
   text-decoration: underline;
+  color: #fb8c00; /* تغيير اللون عند التمرير */
 }
 
 /* تنسيق الفوتر */
